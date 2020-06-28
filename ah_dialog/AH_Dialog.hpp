@@ -882,8 +882,8 @@ class AH_ExecMenu
             
             colorText[] = {1,1,1,1};
 				colorBackground[] = {0.05,0.05,0.05,0.5};
-				size = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.85);
-				sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.85);
+				size = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.75);
+				sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.75);
 				fade = 1;
 				moving = 0;
 
@@ -901,8 +901,8 @@ class AH_ExecMenu
             
             colorText[] = {1,1,1,1};
 				colorBackground[] = {0.05,0.05,0.05,0.5};
-				size = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.85);
-				sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.85);
+				size = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.75);
+				sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.75);
 				fade = 1;
 				moving = 0;
 
@@ -939,8 +939,8 @@ class AH_ExecMenu
             
             colorText[] = {1,1,1,1};
 				colorBackground[] = {0.05,0.05,0.05,0.5};
-				size = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.85);
-				sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.85);
+				size = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.75);
+				sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.75);
 				fade = 1;
 				moving = 0;
 
@@ -958,8 +958,8 @@ class AH_ExecMenu
             
             colorText[] = {1,1,1,1};
 				colorBackground[] = {0.05,0.05,0.05,0.5};
-				size = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.85);
-				sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.85);
+				size = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.75);
+				sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.75);
 				fade = 1;
 				moving = 0;
 
@@ -1015,8 +1015,8 @@ class AH_ExecMenu
             
             colorText[] = {1,1,1,1};
 				colorBackground[] = {0.05,0.05,0.05,0.5};
-				size = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.85);
-				sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.85);
+				size = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.75);
+				sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.75);
 				fade = 1;
 				moving = 0;
 
