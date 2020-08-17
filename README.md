@@ -1,7 +1,7 @@
-## **Fini-Modified-GUI**
+# **! Deprecated !**
+**Working on a new version soonTM**
 
-### **! Deprecated !**
-#### **Working on a new version soonTM**
+## **Fini-Modified-GUI**
 
 #### **Requirements**
  - A copy of Fini's Anti-Hack & Admin Tools is required. (https://site.fini.dev/)
