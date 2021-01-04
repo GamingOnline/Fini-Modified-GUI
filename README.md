@@ -14,7 +14,7 @@
       1. [] execVM "dialog\AH\AH_Menu.sqf";
  
 ## **Additional Information**
- - If for whatever reason you don't have a notification system or want to used the one bundled in the scripts file, you can change your notification method within the fini cloud config with the following.
+ - If for whatever reason you don't have a notification system or want to use the one bundled in the scripts file, you can change your notification method within the fini cloud config with the following.
  1. [(_this select 0)] call AH_AM_Notification;
       
 ## **Support**
