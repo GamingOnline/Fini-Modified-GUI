@@ -1,4 +1,4 @@
-[![|Solid](https://fini.dev/img/logo.png)](https://github.com/GamingOnline/Fini-Modified-GUI)
+[![|Solid](https://fini.dev/img/logo.png)](https://site.fini.dev/)
 # **Fini-Modified-GUI**
 
 ## **Requirements**
