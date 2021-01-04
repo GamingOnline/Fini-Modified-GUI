@@ -78,7 +78,7 @@
 #define COLOUR_INPUT                    {0,     0,     0,     0.4}
 #define COLOUR_MAIN_PROFILENAMESPACE    {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"}
 
-class AN_ScrollBar {
+class AH_ScrollBar {
 	color[] 			= {1, 1, 1, 0.6};
 	colorActive[] 		= {1, 1, 1, 1};
 	colorDisabled[] 	= {1, 1, 1, 0.3};
@@ -96,7 +96,7 @@ class AN_ScrollBar {
 	autoScrollRewind 	= 0;
 };
 
-class AN_RscFrame {
+class AH_RscFrame {
 	type = 0;
 	idc = -1;
 	deletable = 0;
@@ -113,7 +113,7 @@ class AN_RscFrame {
 	h = 0.3;
 };
 
-class AN_RscText {
+class AH_RscText {
 	x 					= 0;
 	y 					= 0;
 	h 					= 0.037;
@@ -133,7 +133,7 @@ class AN_RscText {
 	tooltipColorShade[] = {0, 0, 0, 0.64999998};
 };
 
-class AN_RscPicture {
+class AH_RscPicture {
 	shadow 					= 0;
 	colorText[] 			= {1, 1, 1, 1};
 	colorBackground[] 		= {-1, -1, -1, -1};
@@ -150,11 +150,11 @@ class AN_RscPicture {
 	sizeEx 					= -1;
 };
 
-class AN_RscPictureKeepAspect: AN_RscPicture {
+class AH_RscPictureKeepAspect: AH_RscPicture {
 	style = "0x30 + 0x800";
 };
 
-class AN_RscProgress {
+class AH_RscProgress {
 	type 				= 8;
 	style 				= 0;
 	x 					= 0.344;
@@ -168,7 +168,7 @@ class AN_RscProgress {
 	colorBar[] 			= {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
 };
 
-class AN_RscShortcutButton {
+class AH_RscShortcutButton {
 	idc					= -1;
 	style				= 0;
 	default 			= 0;
@@ -266,10 +266,10 @@ class AN_RscShortcutButton {
 	};
 };
 
-class AN_RscButtonMenu: AN_RscShortcutButton {
+class AH_RscButtonMenu: AH_RscShortcutButton {
 	idc						= -1;
 	type					= 16;
-	style					= "0x02";
+	style					= "0x02 + 0xC0";
 	default					= 0;
 	shadow					= 0;
 	x						= 0;
@@ -345,7 +345,7 @@ class AN_RscButtonMenu: AN_RscShortcutButton {
 	};
 };
 
-class AN_RscCombo {
+class AH_RscCombo {
 	style 						= "0x10 + 0x200";
 	font 						= "PuristaLight";
 	sizeEx 						= "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
@@ -393,12 +393,12 @@ class AN_RscCombo {
 		0.1,
 		1
 	};
-	class ComboScrollBar: AN_ScrollBar {
+	class ComboScrollBar: AH_ScrollBar {
 		color[] = {1,1,1,1};
 	};
 };
 
-class AN_RscListBox {
+class AH_RscListBox {
 	x 								= 0;
 	y 								= 0;
 	w 								= 0.30000001;
@@ -437,13 +437,13 @@ class AN_RscListBox {
 		0.090000004,
 		1
 	};
-	class ListScrollBar: AN_ScrollBar {
+	class ListScrollBar: AH_ScrollBar {
 		color[]			  = {1,1,1,1};
 		autoScrollEnabled = 1;
 	};
 };
 
-class AN_RscStructuredText {
+class AH_RscStructuredText {
 	x 			= 0;
 	y		 	= 0;
 	h 			= 0.035;
@@ -463,7 +463,7 @@ class AN_RscStructuredText {
 	};
 };
 
-class AN_RscControlsGroup {
+class AH_RscControlsGroup {
 	type 	= 15;
 	idc 	= -1;
 	x 		= 0;
@@ -472,38 +472,38 @@ class AN_RscControlsGroup {
 	h 		= 1;
 	shadow 	= 0;
 	style 	= 16;
-	class AN_VScrollbar: AN_ScrollBar {
+	class AH_VScrollbar: AH_ScrollBar {
 		width 			  = 0.021;
 		autoScrollEnabled = 1;
 	};
-	class AN_HScrollbar: AN_ScrollBar {
+	class AH_HScrollbar: AH_ScrollBar {
 		height = 0.028;
 	};
 	class Controls {};
 };
 
-class AN_RscControlsGroupNoScrollbars: AN_RscControlsGroup {
-	class VScrollbar: AN_VScrollbar {
+class AH_RscControlsGroupNoScrollbars: AH_RscControlsGroup {
+	class VScrollbar: AH_VScrollbar {
 		width = 0;
 	};
-	class HScrollbar: AN_HScrollbar {
+	class HScrollbar: AH_HScrollbar {
 		height = 0;
 	};
 };
 
-class AN_RscControlsGroupNoHScrollbars: AN_RscControlsGroup {
-	class HScrollbar: AN_HScrollbar {
+class AH_RscControlsGroupNoHScrollbars: AH_RscControlsGroup {
+	class HScrollbar: AH_HScrollbar {
 		height = 0;
 	};
 };
 
-class AN_RscControlsGroupNoVScrollbars: AN_RscControlsGroup {
-	class VScrollbar: AN_VScrollbar {
+class AH_RscControlsGroupNoVScrollbars: AH_RscControlsGroup {
+	class VScrollbar: AH_VScrollbar {
 		width = 0;
 	};
 };
 
-class AN_RscEdit {
+class AH_RscEdit {
 	access 				= 0;
     type 				= CT_EDIT;
     style 				= ST_LEFT + ST_FRAME + ST_NO_RECT;
@@ -523,7 +523,7 @@ class AN_RscEdit {
     shadow 				= 0;
 };
 
-class AN_RscTree {
+class AH_RscTree {
 	type 						= CT_TREE;
 	style 						= ST_LEFT;
 	text						= "";
@@ -558,19 +558,19 @@ class AN_RscTree {
 	colorPictureRight[] 		= {1, 1, 1, 1};
 	colorPictureRightSelected[] = {0, 0, 0, 1};
 	colorPictureRightDisabled[] = {1, 1, 1, 0.25};
-	class ScrollBar: AN_ScrollBar {};
+	class ScrollBar: AH_ScrollBar {};
 };
 
-class AN_RscTiles: AN_RscControlsGroupNoScrollbars {
+class AH_RscTiles: AH_RscControlsGroupNoScrollbars {
 	idc                 = 115099;
 	x                   = "safezoneX";
 	y                   = "safezoneY";
 	w                   = "safezoneW";
 	h                   = "safezoneH";
 	disableCustomColors = 1;
-	onLoad              = "[ctrlParent (_this select 0), 'AN_displayPause'] call (uiNamespace getVariable 'BIS_fnc_guiEffectTiles')";
+	onLoad              = "[ctrlParent (_this select 0), 'AH_displayPause'] call (uiNamespace getVariable 'BIS_fnc_guiEffectTiles')";
 	class Controls {
-		class TileFrame: AN_RscFrame {
+		class TileFrame: AH_RscFrame {
 			idc             = 114999;
 			x               = 0;
 			y               = 0;
@@ -578,7 +578,7 @@ class AN_RscTiles: AN_RscControlsGroupNoScrollbars {
 			h               = "safezoneH";
 			colortext[]     = {0, 0, 0, 1};
 		};
-		class Tile_0_0: AN_RscText {
+		class Tile_0_0: AH_RscText {
 			idc                 = 115000;
 			x                   = "(0 * 1/6) * safezoneW";
 			y                   = "(0 * 1/6) * safezoneH";
@@ -586,7 +586,7 @@ class AN_RscTiles: AN_RscControlsGroupNoScrollbars {
 			h                   = "1/6 * safezoneH";
 			colorBackground[]   = {0, 0, 0, 0.1};
 		};
-		class Tile_0_1: AN_RscText {
+		class Tile_0_1: AH_RscText {
 			idc                 = 115001;
 			x                   = "(0 * 1/6) * safezoneW";
 			y                   = "(1 * 1/6) * safezoneH";
@@ -594,7 +594,7 @@ class AN_RscTiles: AN_RscControlsGroupNoScrollbars {
 			h                   = "1/6 * safezoneH";
 			colorBackground[]   = {0, 0, 0, 0.1};
 		};
-		class Tile_0_2: AN_RscText {
+		class Tile_0_2: AH_RscText {
 			idc                 = 115002;
 			x                   = "(0 * 1/6) * safezoneW";
 			y                   = "(2 * 1/6) * safezoneH";
@@ -602,7 +602,7 @@ class AN_RscTiles: AN_RscControlsGroupNoScrollbars {
 			h                   = "1/6 * safezoneH";
 			colorBackground[]   = {0, 0, 0, 0.1};
 		};
-		class Tile_0_3: AN_RscText {
+		class Tile_0_3: AH_RscText {
 			idc                 = 115003;
 			x                   = "(0 * 1/6) * safezoneW";
 			y                   = "(3 * 1/6) * safezoneH";
@@ -610,7 +610,7 @@ class AN_RscTiles: AN_RscControlsGroupNoScrollbars {
 			h                   = "1/6 * safezoneH";
 			colorBackground[]   = {0, 0, 0, 0.1};
 		};
-		class Tile_0_4: AN_RscText {
+		class Tile_0_4: AH_RscText {
 			idc                 = 115004;
 			x                   = "(0 * 1/6) * safezoneW";
 			y                   = "(4 * 1/6) * safezoneH";
@@ -618,7 +618,7 @@ class AN_RscTiles: AN_RscControlsGroupNoScrollbars {
 			h                   = "1/6 * safezoneH";
 			colorBackground[]   = {0, 0, 0, 0.1};
 		};
-		class Tile_0_5: AN_RscText {
+		class Tile_0_5: AH_RscText {
 			idc                 = 115005;
 			x                   = "(0 * 1/6) * safezoneW";
 			y                   = "(5 * 1/6) * safezoneH";
@@ -626,7 +626,7 @@ class AN_RscTiles: AN_RscControlsGroupNoScrollbars {
 			h                   = "1/6 * safezoneH";
 			colorBackground[]   = {0, 0, 0, 0.1};
 		};
-		class Tile_1_0: AN_RscText {
+		class Tile_1_0: AH_RscText {
 			idc                 = 115010;
 			x                   = "(1 * 1/6) * safezoneW";
 			y                   = "(0 * 1/6) * safezoneH";
@@ -634,7 +634,7 @@ class AN_RscTiles: AN_RscControlsGroupNoScrollbars {
 			h                   = "1/6 * safezoneH";
 			colorBackground[]   = {0, 0, 0, 0.1};
 		};
-		class Tile_1_1: AN_RscText {
+		class Tile_1_1: AH_RscText {
 			idc                 = 115011;
 			x                   = "(1 * 1/6) * safezoneW";
 			y                   = "(1 * 1/6) * safezoneH";
@@ -642,7 +642,7 @@ class AN_RscTiles: AN_RscControlsGroupNoScrollbars {
 			h                   = "1/6 * safezoneH";
 			colorBackground[]   = {0, 0, 0, 0.1};
 		};
-		class Tile_1_2: AN_RscText {
+		class Tile_1_2: AH_RscText {
 			idc                 = 115012;
 			x                   = "(1 * 1/6) * safezoneW";
 			y                   = "(2 * 1/6) * safezoneH";
@@ -650,7 +650,7 @@ class AN_RscTiles: AN_RscControlsGroupNoScrollbars {
 			h                   = "1/6 * safezoneH";
 			colorBackground[]   = {0, 0, 0, 0.1};
 		};
-		class Tile_1_3: AN_RscText {
+		class Tile_1_3: AH_RscText {
 			idc                 = 115013;
 			x                   = "(1 * 1/6) * safezoneW";
 			y                   = "(3 * 1/6) * safezoneH";
@@ -658,7 +658,7 @@ class AN_RscTiles: AN_RscControlsGroupNoScrollbars {
 			h                   = "1/6 * safezoneH";
 			colorBackground[]   = {0, 0, 0, 0.1};
 		};
-		class Tile_1_4: AN_RscText {
+		class Tile_1_4: AH_RscText {
 			idc                 = 115014;
 			x                   = "(1 * 1/6) * safezoneW";
 			y                   = "(4 * 1/6) * safezoneH";
@@ -666,7 +666,7 @@ class AN_RscTiles: AN_RscControlsGroupNoScrollbars {
 			h                   = "1/6 * safezoneH";
 			colorBackground[]   = {0, 0, 0, 0.1};
 		};
-		class Tile_1_5: AN_RscText {
+		class Tile_1_5: AH_RscText {
 			idc                 = 115015;
 			x                   = "(1 * 1/6) * safezoneW";
 			y                   = "(5 * 1/6) * safezoneH";
@@ -674,7 +674,7 @@ class AN_RscTiles: AN_RscControlsGroupNoScrollbars {
 			h                   = "1/6 * safezoneH";
 			colorBackground[]   = {0, 0, 0, 0.1};
 		};
-		class Tile_2_0: AN_RscText {
+		class Tile_2_0: AH_RscText {
 			idc                 = 115020;
 			x                   = "(2 * 1/6) * safezoneW";
 			y                   = "(0 * 1/6) * safezoneH";
@@ -682,7 +682,7 @@ class AN_RscTiles: AN_RscControlsGroupNoScrollbars {
 			h                   = "1/6 * safezoneH";
 			colorBackground[]   = {0, 0, 0, 0.1};
 		};
-		class Tile_2_1: AN_RscText {
+		class Tile_2_1: AH_RscText {
 			idc                 = 115021;
 			x                   = "(2 * 1/6) * safezoneW";
 			y                   = "(1 * 1/6) * safezoneH";
@@ -690,7 +690,7 @@ class AN_RscTiles: AN_RscControlsGroupNoScrollbars {
 			h                   = "1/6 * safezoneH";
 			colorBackground[]   = {0, 0, 0, 0.1};
 		};
-		class Tile_2_2: AN_RscText {
+		class Tile_2_2: AH_RscText {
 			idc                 = 115022;
 			x                   = "(2 * 1/6) * safezoneW";
 			y                   = "(2 * 1/6) * safezoneH";
@@ -698,7 +698,7 @@ class AN_RscTiles: AN_RscControlsGroupNoScrollbars {
 			h                   = "1/6 * safezoneH";
 			colorBackground[]   = {0, 0, 0, 0.1};
 		};
-		class Tile_2_3: AN_RscText {
+		class Tile_2_3: AH_RscText {
 				idc                 = 115023;
 			x                   = "(2 * 1/6) * safezoneW";
 			y                   = "(3 * 1/6) * safezoneH";
@@ -706,7 +706,7 @@ class AN_RscTiles: AN_RscControlsGroupNoScrollbars {
 			h                   = "1/6 * safezoneH";
 			colorBackground[]   = {0, 0, 0, 0.1};
 		};
-		class Tile_2_4: AN_RscText {
+		class Tile_2_4: AH_RscText {
 			idc                 = 115024;
 			x                   = "(2 * 1/6) * safezoneW";
 			y                   = "(4 * 1/6) * safezoneH";
@@ -714,7 +714,7 @@ class AN_RscTiles: AN_RscControlsGroupNoScrollbars {
 			h                   = "1/6 * safezoneH";
 			colorBackground[]   = {0, 0, 0, 0.1};
 		};
-		class Tile_2_5: AN_RscText {
+		class Tile_2_5: AH_RscText {
 			idc                 = 115025;
 			x                   = "(2 * 1/6) * safezoneW";
 			y                   = "(5 * 1/6) * safezoneH";
@@ -722,7 +722,7 @@ class AN_RscTiles: AN_RscControlsGroupNoScrollbars {
 			h                   = "1/6 * safezoneH";
 			colorBackground[]   = {0, 0, 0, 0.1};
 		};
-		class Tile_3_0: AN_RscText {
+		class Tile_3_0: AH_RscText {
 			idc                 = 115030;
 			x                   = "(3 * 1/6) * safezoneW";
 			y                   = "(0 * 1/6) * safezoneH";
@@ -730,7 +730,7 @@ class AN_RscTiles: AN_RscControlsGroupNoScrollbars {
 			h                   = "1/6 * safezoneH";
 			colorBackground[]   = {0, 0, 0, 0.1};
 		};
-		class Tile_3_1: AN_RscText {
+		class Tile_3_1: AH_RscText {
 			idc                 = 115031;
 			x                   = "(3 * 1/6) * safezoneW";
 			y                   = "(1 * 1/6) * safezoneH";
@@ -738,7 +738,7 @@ class AN_RscTiles: AN_RscControlsGroupNoScrollbars {
 			h                   = "1/6 * safezoneH";
 			colorBackground[]   = {0, 0, 0, 0.1};
 		};
-		class Tile_3_2: AN_RscText {
+		class Tile_3_2: AH_RscText {
 			idc                 = 115032;
 			x                   = "(3 * 1/6) * safezoneW";
 			y                   = "(2 * 1/6) * safezoneH";
@@ -746,7 +746,7 @@ class AN_RscTiles: AN_RscControlsGroupNoScrollbars {
 			h                   = "1/6 * safezoneH";
 			colorBackground[]   = {0, 0, 0, 0.1};
 		};
-		class Tile_3_3: AN_RscText {
+		class Tile_3_3: AH_RscText {
 			idc                 = 115033;
 			x                   = "(3 * 1/6) * safezoneW";
 			y                   = "(3 * 1/6) * safezoneH";
@@ -754,7 +754,7 @@ class AN_RscTiles: AN_RscControlsGroupNoScrollbars {
 			h                   = "1/6 * safezoneH";
 			colorBackground[]   = {0, 0, 0, 0.1};
 		};
-		class Tile_3_4: AN_RscText {
+		class Tile_3_4: AH_RscText {
 			idc                 = 115034;
 			x                   = "(3 * 1/6) * safezoneW";
 			y                   = "(4 * 1/6) * safezoneH";
@@ -762,7 +762,7 @@ class AN_RscTiles: AN_RscControlsGroupNoScrollbars {
 			h                   = "1/6 * safezoneH";
 			colorBackground[]   = {0, 0, 0, 0.1};
 		};
-		class Tile_3_5: AN_RscText {
+		class Tile_3_5: AH_RscText {
 			idc                 = 115035;
 			x                   = "(3 * 1/6) * safezoneW";
 			y                   = "(5 * 1/6) * safezoneH";
@@ -770,7 +770,7 @@ class AN_RscTiles: AN_RscControlsGroupNoScrollbars {
 			h                   = "1/6 * safezoneH";
 			colorBackground[]   = {0, 0, 0, 0.1};
 		};
-		class Tile_4_0: AN_RscText {
+		class Tile_4_0: AH_RscText {
 			idc                 = 115040;
 			x                   = "(4 * 1/6) * safezoneW";
 			y                   = "(0 * 1/6) * safezoneH";
@@ -778,7 +778,7 @@ class AN_RscTiles: AN_RscControlsGroupNoScrollbars {
 			h                   = "1/6 * safezoneH";
 			colorBackground[]   = {0, 0, 0, 0.1};
 		};
-		class Tile_4_1: AN_RscText {
+		class Tile_4_1: AH_RscText {
 			idc                 = 115041;
 			x                   = "(4 * 1/6) * safezoneW";
 			y                   = "(1 * 1/6) * safezoneH";
@@ -786,7 +786,7 @@ class AN_RscTiles: AN_RscControlsGroupNoScrollbars {
 			h                   = "1/6 * safezoneH";
 			colorBackground[]   = {0, 0,0,0.1};
 		};
-		class Tile_4_2: AN_RscText {
+		class Tile_4_2: AH_RscText {
 			idc                 = 115042;
 			x                   = "(4 * 1/6) * safezoneW";
 			y                   = "(2 * 1/6) * safezoneH";
@@ -794,7 +794,7 @@ class AN_RscTiles: AN_RscControlsGroupNoScrollbars {
 			h                   = "1/6 * safezoneH";
 			colorBackground[]   = {0, 0, 0, 0.1};
 		};
-		class Tile_4_3: AN_RscText {
+		class Tile_4_3: AH_RscText {
 			idc                 = 115043;
 			x                   = "(4 * 1/6) * safezoneW";
 			y                   = "(3 * 1/6) * safezoneH";
@@ -802,7 +802,7 @@ class AN_RscTiles: AN_RscControlsGroupNoScrollbars {
 			h                   = "1/6 * safezoneH";
 			colorBackground[]   = {0, 0, 0, 0.1};
 		};
-		class Tile_4_4: AN_RscText {
+		class Tile_4_4: AH_RscText {
 			idc                 = 115044;
 			x                   = "(4 * 1/6) * safezoneW";
 			y                   = "(4 * 1/6) * safezoneH";
@@ -810,7 +810,7 @@ class AN_RscTiles: AN_RscControlsGroupNoScrollbars {
 			h                   = "1/6 * safezoneH";
 			colorBackground[]   = {0, 0, 0, 0.1};
 		};
-		class Tile_4_5: AN_RscText {
+		class Tile_4_5: AH_RscText {
 			idc                 = 115045;
 			x                   = "(4 * 1/6) * safezoneW";
 			y                   = "(5 * 1/6) * safezoneH";
@@ -818,7 +818,7 @@ class AN_RscTiles: AN_RscControlsGroupNoScrollbars {
 			h                   = "1/6 * safezoneH";
 			colorBackground[]   = {0, 0, 0, 0.1};
 		};
-		class Tile_5_0: AN_RscText {
+		class Tile_5_0: AH_RscText {
 			idc                = 115050;
 			x                  = "(5 * 1/6) * safezoneW";
 			y                  = "(0 * 1/6) * safezoneH";
@@ -826,7 +826,7 @@ class AN_RscTiles: AN_RscControlsGroupNoScrollbars {
 			h                  = "1/6 * safezoneH";
 			colorBackground[]  = {0, 0, 0, 0.1};
 		};
-		class Tile_5_1: AN_RscText {
+		class Tile_5_1: AH_RscText {
 			idc                = 115051;
 			x                  = "(5 * 1/6) * safezoneW";
 			y                  = "(1 * 1/6) * safezoneH";
@@ -834,7 +834,7 @@ class AN_RscTiles: AN_RscControlsGroupNoScrollbars {
 			h                  = "1/6 * safezoneH";
 			colorBackground[]  = {0, 0, 0, 0.1};
 		};
-		class Tile_5_2: AN_RscText {
+		class Tile_5_2: AH_RscText {
 			idc                = 115052;
 			x                  = "(5 * 1/6) * safezoneW";
 			y                  = "(2 * 1/6) * safezoneH";
@@ -842,7 +842,7 @@ class AN_RscTiles: AN_RscControlsGroupNoScrollbars {
 			h                  = "1/6 * safezoneH";
 			colorBackground[]  = {0, 0, 0, 0.1};
 		};
-		class Tile_5_3: AN_RscText {
+		class Tile_5_3: AH_RscText {
 			idc                    = 115053;
 			x                      = "(5 * 1/6) * safezoneW";
 			y                      = "(3 * 1/6) * safezoneH";
@@ -850,7 +850,7 @@ class AN_RscTiles: AN_RscControlsGroupNoScrollbars {
 			h                      = "1/6 * safezoneH";
 			colorBackground[]      = {0, 0, 0, 0.1};
 		};
-		class Tile_5_4: AN_RscText {
+		class Tile_5_4: AH_RscText {
 			idc                = 115054;
 			x                  = "(5 * 1/6) * safezoneW";
 			y                  = "(4 * 1/6) * safezoneH";
@@ -858,7 +858,7 @@ class AN_RscTiles: AN_RscControlsGroupNoScrollbars {
 			h                  = "1/6 * safezoneH";
 			colorBackground[]  = {0, 0, 0, 0.1};
 		};
-		class Tile_5_5: AN_RscText {
+		class Tile_5_5: AH_RscText {
 			idc                 = 115055;
 			x                   = "(5 * 1/6) * safezoneW";
 			y                   = "(5 * 1/6) * safezoneH";
@@ -869,7 +869,7 @@ class AN_RscTiles: AN_RscControlsGroupNoScrollbars {
 	};
 };
 
-class AN_RscCheckBox {
+class AH_RscCheckBox {
 	idc 							= -1;
 	type 							= CT_CHECKBOX;
 	deletable 						= 0;
@@ -908,7 +908,7 @@ class AN_RscCheckBox {
 	soundEscape[] 					= {"\A3\ui_f\data\sound\RscButtonMenuOK\soundPush", 0.09, 1};
 };
 
-class AN_RscMapControl {
+class AH_RscMapControl {
     access 							= 0;
     type 							= 101;
     idc 							= 51;
@@ -1256,7 +1256,7 @@ class AN_RscMapControl {
     };
 };
 
-class AN_RscBackground: AN_RscText {
+class AH_RscBackground: AH_RscText {
 	idc                = -1;
 	x                  = "safezoneW + safezoneX";
 	y                  = "safezoneH + safezoneY";
@@ -1265,7 +1265,7 @@ class AN_RscBackground: AN_RscText {
 	colorBackground[]  = COLOUR_MAINBACKGROUND;
 };
 
-class AN_RscSlider {
+class AH_RscSlider {
 	x 				   = 0;
 	y 				   = 0;
 	w 				   = 0.3;
@@ -1273,7 +1273,7 @@ class AN_RscSlider {
 	color[] 	  	   = {1, 1, 1, 0.8};
 	colorActive[] 	   = {1, 1, 1, 1};
 };
-class AN_RscXSliderH {
+class AH_RscXSliderH {
 	style 				= SL_HORZ;
     type 				= CT_XSLIDER;
 	shadow 				= 0;
@@ -1293,7 +1293,7 @@ class AN_RscXSliderH {
 	tooltipColorShade[] = {0, 0, 0, 0.65};
 };
 
-class AN_RscDefault {
+class AH_RscDefault {
 	access 				= 0;
 	idc 				= -1;
 	style 				= 0;
@@ -1322,7 +1322,7 @@ class AN_RscDefault {
 		color[] 		= {1, 1, 1, 1};
 	};
 };
-class AN_RscDefaultButton: AN_RscDefault {
+class AH_RscDefaultButton: AH_RscDefault {
 	soundClick[] 		= {"\A3\ui_f\data\sound\RscButton\soundClick", 0.09, 1};
 	soundEnter[] 		= {"\A3\ui_f\data\sound\RscButton\soundEnter", 0.09, 1};
 	soundPush[] 		= {"\A3\ui_f\data\sound\RscButton\soundPush", 0.09, 1};
@@ -1331,13 +1331,13 @@ class AN_RscDefaultButton: AN_RscDefault {
 	font 				= "PuristaLight";
 	shadow 				= 0;
 };
-class AN_RscButton: AN_RscDefaultButton {
+class AH_RscButton: AH_RscDefaultButton {
 	type 						= 1;
-	style 						= "0x02";
+	style 						= "0x02 + 0xC0";
 	colorBackground[] 			= {0, 0, 0, 1};
 	colorBackgroundDisabled[] 	= {0, 0, 0, 0.5};
-	colorBackgroundActive[] 	= {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};//{"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.77])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.51])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.08])",1};
-	colorFocused[] 				= {0, 0, 0, 0.75};//{"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.77])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.51])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.08])",1};
+	colorBackgroundActive[] 	= {0.3, 0.3, 0.3, 0.5};//{"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.77])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.51])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.08])",1};
+	colorFocused[] 				= {0.3, 0.3, 0.3, 0.5};//{"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.77])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.51])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.08])",1};
 	font 						= "PuristaLight";
 	text 						= "";
 	colorText[] 				= {1, 1, 1, 1};
@@ -1377,15 +1377,15 @@ class AN_RscButton: AN_RscDefaultButton {
 	onButtonDown 				= "";
 	onButtonUp 					= "";
 };
-class AN_RscButtonPictureKeepAspect: AN_RscButton {
+class AH_RscButtonPictureKeepAspect: AH_RscButton {
 	style 						= "0x02 + 0x30 + 0x800";
 };
-class AN_RscButtonToolbar: AN_RscButtonPictureKeepAspect {
+class AH_RscButtonToolbar: AH_RscButtonPictureKeepAspect {
 	colorBackground[] 			= {0, 0, 0, 0};
 	colorBackgroundDisabled[] 	= {0, 0, 0, 0};
 };
 
-class AN_ctrlDefault {
+class AH_ctrlDefault {
     access = 0;
     idc = -1;
     style = 0;
@@ -1416,13 +1416,13 @@ class AN_ctrlDefault {
     };
 };
 
-class AN_ctrlDefaultText: AN_ctrlDefault {
+class AH_ctrlDefaultText: AH_ctrlDefault {
     sizeEx = "4.32 * (1 / (getResolution select 3)) * pixelGrid * 0.5";
     font = "RobotoCondensedLight";
     shadow = 1;
 };
 
-class AN_ctrlToolbox: AN_ctrlDefaultText {
+class AH_ctrlToolbox: AH_ctrlDefaultText {
 	type                    = 6;
 	style                   = 2;
 	colorBackground[]       = {0, 0, 0, 0.5};
@@ -1454,14 +1454,14 @@ class AN_ctrlToolbox: AN_ctrlDefaultText {
 	onMouseHolding          = "";
 	onToolBoxSelChanged     = "";
 };
-class AN_ctrlToolboxPicture: AN_ctrlToolbox {
+class AH_ctrlToolboxPicture: AH_ctrlToolbox {
 	style                   = "0x02 + 0x30";
 };
-class AN_ctrlToolboxPictureKeepAspect: AN_ctrlToolbox {
+class AH_ctrlToolboxPictureKeepAspect: AH_ctrlToolbox {
 	style                   = "0x02 + 0x30 + 0x800";
 };
 
-class AN_ctrlDefaultButton0: AN_ctrlDefaultText {
+class AH_ctrlDefaultButton0: AH_ctrlDefaultText {
     soundClick[] = {
         "\A3\ui_f\data\sound\RscButton\soundClick",
         0.09,
@@ -1484,7 +1484,7 @@ class AN_ctrlDefaultButton0: AN_ctrlDefaultText {
     };
 };
 
-class AN_ctrlDefaultButton: AN_ctrlDefaultButton0 {
+class AH_ctrlDefaultButton: AH_ctrlDefaultButton0 {
     type						= CT_BUTTON;
     style 						= ST_CENTER;
     sizeEx 						= "0.018 * safezoneH";
@@ -1506,7 +1506,7 @@ class AN_ctrlDefaultButton: AN_ctrlDefaultButton0 {
     offsetPressedY 				= pixelH;
 };
 
-class AN_ctrlFloatButton: AN_ctrlDefaultButton0 {
+class AH_ctrlFloatButton: AH_ctrlDefaultButton0 {
     type						= CT_BUTTON;
     style 						= ST_CENTER;
     sizeEx 						= "0.018 * safezoneH";
@@ -1528,7 +1528,7 @@ class AN_ctrlFloatButton: AN_ctrlDefaultButton0 {
     offsetPressedY 				= pixelH;
 };
 
-class AN_ctrlContentAreaButton: AN_ctrlDefaultButton {
+class AH_ctrlContentAreaButton: AH_ctrlDefaultButton {
     type						= CT_BUTTON;
     style 						= ST_CENTER;
     sizeEx 						= "0.018 * safezoneH";
@@ -1546,14 +1546,14 @@ class AN_ctrlContentAreaButton: AN_ctrlDefaultButton {
     offsetPressedY 				= pixelH;
 };
 
-class AN_ctrlContentAreaTexturedButton: AN_RscButtonMenu {
-    animTextureDefault 			= "\ANCore\images\displays\DISPLAYMenu\buttonTextureNormal.paa";
-    animTextureDisabled 		= "\ANCore\images\displays\DISPLAYMenu\buttonTextureNormal.paa";
-    animTexturePressed 			= "\ANCore\images\displays\DISPLAYMenu\buttonTextureNormal.paa";
-    animTextureNormal 			= "\ANCore\images\displays\DISPLAYMenu\buttonTextureNormal.paa";
-    textureNoShortcut 			= "\ANCore\images\displays\DISPLAYMenu\buttonTextureNormal.paa";
-    animTextureFocused 			= "\ANCore\images\displays\DISPLAYMenu\buttonTextureFocus.paa";
-    animTextureOver 			= "\ANCore\images\displays\DISPLAYMenu\buttonTextureFocus.paa";
+class AH_ctrlContentAreaTexturedButton: AH_RscButtonMenu {
+    animTextureDefault 			= "\ASCore\images\displays\DISPLAYMenu\buttonTextureNormal.paa";
+    animTextureDisabled 		= "\ASCore\images\displays\DISPLAYMenu\buttonTextureNormal.paa";
+    animTexturePressed 			= "\ASCore\images\displays\DISPLAYMenu\buttonTextureNormal.paa";
+    animTextureNormal 			= "\ASCore\images\displays\DISPLAYMenu\buttonTextureNormal.paa";
+    textureNoShortcut 			= "\ASCore\images\displays\DISPLAYMenu\buttonTextureNormal.paa";
+    animTextureFocused 			= "\ASCore\images\displays\DISPLAYMenu\buttonTextureFocus.paa";
+    animTextureOver 			= "\ASCore\images\displays\DISPLAYMenu\buttonTextureFocus.paa";
     color2[] 					= {1, 1, 1, 0.5};
     color[] 					= {1, 1, 1, 1};
     colorBackground2[] 			= {1, 1, 1, 1};
@@ -1579,9 +1579,9 @@ class AN_ctrlContentAreaTexturedButton: AN_RscButtonMenu {
     };
 };
 
-class AN_ctrlButton: AN_ctrlDefaultButton {
+class AH_ctrlButton: AH_ctrlDefaultButton {
     type = 1;
-    style = "0x02";
+    style = "0x02 + 0xC0";
     colorBackground[] = {0, 0, 0, 1};
     colorBackgroundDisabled[] = {0, 0, 0, 0.5};
     colorBackgroundActive[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.77])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.51])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.08])",1};
@@ -1629,18 +1629,18 @@ class AN_ctrlButton: AN_ctrlDefaultButton {
     h = "0.0198 * safezoneH";
 };
 
-class AN_ctrlButtonPictureKeepAspect: AN_ctrlButton {
+class AH_ctrlButtonPictureKeepAspect: AH_ctrlButton {
     style = ST_CENTER + ST_MULTI + ST_TITLE_BAR + ST_KEEP_ASPECT_RATIO;
 };
 
-class AN_ctrlButtonToolbar: AN_ctrlButtonPictureKeepAspect {
+class AH_ctrlButtonToolbar: AH_ctrlButtonPictureKeepAspect {
     colorBackground[]           = {0, 0, 0, 0};
     colorBackgroundDisabled[]   = {0, 0, 0, 0};
     shadow                      = 0;
     colorShadow[]               = {0, 0, 0, 0};
 };
 
-class AN_ctrlButtonCancel: AN_ctrlButton {
+class AH_ctrlButtonCancel: AH_ctrlButton {
     h                  = "0.022 * safezoneH";
     colorBackground[]  = COLOUR_EMPTY;
     text               = "X";
@@ -1650,7 +1650,7 @@ class AN_ctrlButtonCancel: AN_ctrlButton {
     onButtonClick      = "(ctrlParent (_this select 0)) closeDisplay 2";
 };
 
-class AN_ctrlButtonSearch: AN_ctrlButton {
+class AH_ctrlButtonSearch: AH_ctrlButton {
     style       = "0x02 + 0x30 + 0x800";
     text        = "\a3\3DEN\Data\Displays\Display3DEN\search_start_ca.paa";
     textSearch  = "\a3\3DEN\Data\Displays\Display3DEN\search_end_ca.paa";
@@ -1659,7 +1659,7 @@ class AN_ctrlButtonSearch: AN_ctrlButton {
     h           = "5 * (pixelH * pixelGrid * 	0.50)";
 };
 
-class AN_ctrlButtonExpandAll: AN_ctrlButtonToolbar {
+class AH_ctrlButtonExpandAll: AH_ctrlButtonToolbar {
     style       = "0x02 + 0x30 + 0x800";
     text        = "\a3\3DEN\Data\Displays\Display3DEN\tree_expand_ca.paa";
     tooltip     = "Expand All";
@@ -1667,7 +1667,7 @@ class AN_ctrlButtonExpandAll: AN_ctrlButtonToolbar {
     h           = "5 * (pixelH * pixelGrid * 0.50)";
 };
 
-class AN_ctrlButtonCollapseAll: AN_ctrlButtonToolbar {
+class AH_ctrlButtonCollapseAll: AH_ctrlButtonToolbar {
     style       = "0x02 + 0x30 + 0x800";
     text        = "\a3\3DEN\Data\Displays\Display3DEN\tree_collapse_ca.paa";
     tooltip     = "Collapse All";
@@ -1675,7 +1675,7 @@ class AN_ctrlButtonCollapseAll: AN_ctrlButtonToolbar {
     h           = "5 * (pixelH * pixelGrid * 0.50)";
 };
 
-class AN_ctrlButtonClose: AN_ctrlButtonToolbar {
+class AH_ctrlButtonClose: AH_ctrlButtonToolbar {
     idc            = -1;
     style          = "0x02 + 0x30 + 0x800";
     text           = "\a3\3DEN\Data\Displays\Display3DEN\search_end_ca.paa";
@@ -1685,7 +1685,7 @@ class AN_ctrlButtonClose: AN_ctrlButtonToolbar {
     offsetPressedY = 0;
 };
 
-class AN_ctrlShortcutButton: AN_ctrlDefaultButton {
+class AH_ctrlShortcutButton: AH_ctrlDefaultButton {
     type = 16;
     style = ST_UPPERCASE;
     colorBackground[] = {0,0,0,1};
@@ -1758,7 +1758,7 @@ class AN_ctrlShortcutButton: AN_ctrlDefaultButton {
     onButtonUp = "";
 };
 
-class AN_ctrlCheckbox: AN_ctrlDefault {
+class AH_ctrlCheckbox: AH_ctrlDefault {
 	type = 77;
 	checked = 1;
 	color[] = {1,1,1,0.7};
@@ -1803,12 +1803,12 @@ class AN_ctrlCheckbox: AN_ctrlDefault {
 	onCheckedChanged = "";
 };
 
-class AN_ctrlCheckboxSquare: AN_ctrlCheckbox {
+class AH_ctrlCheckboxSquare: AH_ctrlCheckbox {
 	w                  = "5 * (pixelW * pixelGrid * 0.50)";
 	h                  = "5 * (pixelH * pixelGrid * 0.50)";
 };
 
-class AN_ctrlControlsGroup: AN_ctrlDefault {
+class AH_ctrlControlsGroup: AH_ctrlDefault {
     type = 15;
     style = 16;
     x = 0;
@@ -1838,7 +1838,7 @@ class AN_ctrlControlsGroup: AN_ctrlDefault {
     onMouseHolding = "";
 };
 
-class AN_ctrlControlsGroupNoScrollbars: AN_ctrlControlsGroup {
+class AH_ctrlControlsGroupNoScrollbars: AH_ctrlControlsGroup {
     class VScrollbar: VScrollBar {
         width = 0;
     };
@@ -1847,7 +1847,7 @@ class AN_ctrlControlsGroupNoScrollbars: AN_ctrlControlsGroup {
     };
 };
 
-class AN_ctrlStatic: AN_ctrlDefaultText {
+class AH_ctrlStatic: AH_ctrlDefaultText {
     idc                     = -1;
     type                    = CT_STATIC;
     colorBackground[]       = {0, 0, 0, 0};
@@ -1880,28 +1880,28 @@ class AN_ctrlStatic: AN_ctrlDefaultText {
     shadow                  = 0;
 };
 
-class AN_ctrlStaticPicture: AN_ctrlStatic {
+class AH_ctrlStaticPicture: AH_ctrlStatic {
     style = ST_LEFT + ST_MULTI + ST_TITLE_BAR;
 };
 
-class AN_ctrlStaticPictureKeepAspect: AN_ctrlStaticPicture {
+class AH_ctrlStaticPictureKeepAspect: AH_ctrlStaticPicture {
     style = "0x30 + 0x800";
 };
 
-class AN_ctrlStaticBackground: AN_ctrlStatic {
+class AH_ctrlStaticBackground: AH_ctrlStatic {
     colorBackground[] = {0.2, 0.2, 0.2, 1};
 };
 
-class AN_ctrlStaticFooter: AN_ctrlStatic {
+class AH_ctrlStaticFooter: AH_ctrlStatic {
     colorBackground[] = {0.15, 0.15, 0.15, 1};
     h                 = "(5 + 2) * (pixelH * pixelGrid * 0.50)";
 };
 
-class AN_ctrlStaticContent: AN_ctrlStatic {
+class AH_ctrlStaticContent: AH_ctrlStatic {
     colorBackground[] = {0, 0, 0, 0.5};
 };
 
-class AN_ctrlStaticTitle: AN_ctrlStatic {
+class AH_ctrlStaticTitle: AH_ctrlStatic {
     colorText[]       = {1, 1, 1, 1};
     colorBackground[] = {
         "(profilenamespace getvariable ['GUI_BCG_RGB_R',0.77])",
@@ -1912,11 +1912,11 @@ class AN_ctrlStaticTitle: AN_ctrlStatic {
     h                 = "0.022 * safezoneH";
 };
 
-class AN_ctrlStaticTitleMoving: AN_ctrlStaticTitle {
+class AH_ctrlStaticTitleMoving: AH_ctrlStaticTitle {
     moving = 1;
 };
 
-class AN_ctrlStaticHeader: AN_ctrlStatic {
+class AH_ctrlStaticHeader: AH_ctrlStatic {
     colorText[]       = {1, 1, 1, 1};
     colorBackground[] = {
         "(profilenamespace getvariable ['GUI_BCG_RGB_R',0.77])",
@@ -1927,15 +1927,15 @@ class AN_ctrlStaticHeader: AN_ctrlStatic {
     h                 = "5 * (pixelH * pixelGrid * 0.50)";
 };
 
-class AN_ctrlStaticHeaderMoving: AN_ctrlStaticHeader {
+class AH_ctrlStaticHeaderMoving: AH_ctrlStaticHeader {
     moving            = 1;
 };
 
-class AN_ctrlStaticPictureTile: AN_ctrlStatic {
+class AH_ctrlStaticPictureTile: AH_ctrlStatic {
     style = 144;
 };
 
-class AN_ctrlStaticBackgroundDisableTiles: AN_ctrlStaticPictureTile {
+class AH_ctrlStaticBackgroundDisableTiles: AH_ctrlStaticPictureTile {
     x = -4;
     y = -2;
     w = 8;
@@ -1946,7 +1946,7 @@ class AN_ctrlStaticBackgroundDisableTiles: AN_ctrlStaticPictureTile {
     colorText[] = {1,1,1,0.05};
 };
 
-class AN_ctrlStructuredText: AN_ctrlDefaultText {
+class AH_ctrlStructuredText: AH_ctrlDefaultText {
     type               = 13;
     style 			   = 0;
     colorBackground[]  = {0, 0, 0, 0};
@@ -1982,10 +1982,10 @@ class AN_ctrlStructuredText: AN_ctrlDefaultText {
     shadow                  = 0;
 };
 
-class AN_ctrlEdit: AN_ctrlDefaultText {
+class AH_ctrlEdit: AH_ctrlDefaultText {
 	type                   = CT_EDIT;
 	style				   = ST_LEFT + ST_FRAME;
-	colorBackground[]      = {0, 0, 0, 0.3};
+	colorBackground[]      = {0, 0, 0, 0.5};
 	text                   = "";
 	colorText[]            = {1, 1, 1, 1};
 	colorDisabled[]        = {1, 1, 1, 0.25};
@@ -2007,24 +2007,23 @@ class AN_ctrlEdit: AN_ctrlDefaultText {
 	onMouseHolding         = "";
 };
 
-class AN_ctrlEditMulti: AN_ctrlEdit {
+class AH_ctrlEditMulti: AH_ctrlEdit {
 	style = ST_MULTI;
 };
 
-class AN_ctrlEditMultiCode: AN_ctrlEdit {
+class AH_ctrlEditMultiCode: AH_ctrlEdit {
 	style 		 = ST_MULTI + ST_LEFT;
 	autocomplete = "scripting";
 	font 		 = "EtelkaMonospacePro";
 };
 
-class AN_ctrlEditNoRect: AN_ctrlEdit {
+class AH_ctrlEditNoRect: AH_ctrlEdit {
 	style = ST_LEFT + ST_NO_RECT;
 };
 
-class AN_ctrlListbox: AN_ctrlDefaultText {
+class AH_ctrlListbox: AH_ctrlDefaultText {
 	type = 5;
 	style = "0x00 + 0x10";
-	colorBackground[] = {0,0,0,0.5};
 	colorSelectBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.77])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.51])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.08])",1};
 	colorSelectBackground2[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.77])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.51])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.08])",1};
 	colorShadow[] = {0,0,0,0.5};
@@ -2068,7 +2067,7 @@ class AN_ctrlListbox: AN_ctrlDefaultText {
 	onLBDrop = "";
 };
 
-class AN_ctrlXListbox: AN_ctrlDefaultText {
+class AH_ctrlXListbox: AH_ctrlDefaultText {
 	type 					= 42;
 	style 					= "0x400 + 0x02 + 0x10";
 	color[] 				= {1, 1, 1, 1};
@@ -2101,7 +2100,7 @@ class AN_ctrlXListbox: AN_ctrlDefaultText {
 	sizeEx 					= "0.018 * safezoneH";
 };
 
-class AN_ctrlListNBox: AN_ctrlDefaultText {
+class AH_ctrlListNBox: AH_ctrlDefaultText {
 	type = 102;
 	style = "0x00 + 0x10";
 	colorSelectBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.77])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.51])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.08])",1};
@@ -2141,7 +2140,7 @@ class AN_ctrlListNBox: AN_ctrlDefaultText {
 	onLBDblClick = "";
 };
 
-class AN_ctrlCombo: AN_ctrlDefaultText {
+class AH_ctrlCombo: AH_ctrlDefaultText {
 	type = 4;
 	style = "0x00 + 0x10 + 0x200";
 	colorBackground[] = {0.05,0.05,0.05,1};
@@ -2192,7 +2191,7 @@ class AN_ctrlCombo: AN_ctrlDefaultText {
 	onLBSelChanged = "";
 };
 
-class AN_ctrlProgress: AN_ctrlDefault {
+class AH_ctrlProgress: AH_ctrlDefault {
 	type           = CT_PROGRESS;
     colorBar[]     = COLOUR_PROGRESSBAR;
     colorFrame[]   = COLOUR_EMPTY;
@@ -2202,14 +2201,14 @@ class AN_ctrlProgress: AN_ctrlDefault {
 	onDestroy      = "";
 };
 
-class AN_ctrlPrompt: AN_ctrlControlsGroupNoScrollbars {
+class AH_ctrlPrompt: AH_ctrlControlsGroupNoScrollbars {
     idd        = -1;
     x          = "safezoneX";
     y          = "safezoneY";
     w          = "safezoneW";
     h          = "safezoneH";
     class controls {
-        class BACKGROUND: AN_ctrlStatic {
+        class BACKGROUND: AH_ctrlStatic {
             idc                 = -1;
             x                   = "0.29375 * safezoneW";
             y                   = "0.380556 * safezoneH";
@@ -2217,7 +2216,7 @@ class AN_ctrlPrompt: AN_ctrlControlsGroupNoScrollbars {
             h                   = "0.2398 * safezoneH";
             colorBackground[]   = COLOUR_AREABACKGROUND;
         };
-        class HEADER: AN_ctrlStatic {
+        class HEADER: AH_ctrlStatic {
             idc                 = -1;
             text                = "Confirm Action";
             x                   = "0.29375 * safezoneW";
@@ -2228,21 +2227,21 @@ class AN_ctrlPrompt: AN_ctrlControlsGroupNoScrollbars {
             font                = "RobotoCondensed";
             sizeEx				= "0.020 * safezoneH";
         };
-        class BUTTON_NO: AN_ctrlFloatButton {
+        class BUTTON_NO: AH_ctrlFloatButton {
             idc                = 1;
             text		       = "";
             x 				   = "0.649531 * safezoneW";
             y 				   = "0.621 * safezoneH";
             w                  = "0.0567187 * safezoneW";
         };
-        class BUTTON_YES: AN_ctrlFloatButton {
+        class BUTTON_YES: AH_ctrlFloatButton {
             idc                = 2;
             text		       = "";
             x                  = "0.592 * safezoneW";
             y                  = "0.621 * safezoneH";
             w                  = "0.0567187 * safezoneW";
         };
-        class CONTENT_TITLE: AN_ctrlStatic {
+        class CONTENT_TITLE: AH_ctrlStatic {
             idc                = 3;
             text               = "";
             x                  = "0.295812 * safezoneW";
@@ -2253,7 +2252,7 @@ class AN_ctrlPrompt: AN_ctrlControlsGroupNoScrollbars {
             font               = "RobotoCondensed";
             sizeEx			   = "0.018 * safezoneH";
         };
-        class CONTENT_TEXT: AN_ctrlStatic {
+        class CONTENT_TEXT: AH_ctrlStatic {
             idc                = 4;
             text               = "";
             x                  = "0.295833 * safezoneW";
@@ -2266,33 +2265,33 @@ class AN_ctrlPrompt: AN_ctrlControlsGroupNoScrollbars {
     };
 };
 
-class AN_ctrlPromptSmall: AN_ctrlControlsGroupNoScrollbars {
+class AH_ctrlPromptSmall: AH_ctrlControlsGroupNoScrollbars {
     idd        = -1;
     x          = "safezoneX";
     y          = "safezoneY";
     w          = "safezoneW";
     h          = "safezoneH";
     class controls {
-        class HEADER: AN_ctrlStaticTitle {
+        class HEADER: AH_ctrlStaticTitle {
             idc 				= 3;
             x 					= "0.396354 * safezoneW";
             y 					= "0.4032 * safezoneH";
             w 					= "0.20625 * safezoneW";
             h 					= "0.0185185 * safezoneH";
         };
-        class BACKGROUND: AN_ctrlStaticBackground {
+        class BACKGROUND: AH_ctrlStaticBackground {
             x 					= "0.396359 * safezoneW";
             y 					= "0.420974 * safezoneH";
             w 					= "0.20625 * safezoneW";
             h 					= "0.110926 * safezoneH";
         };
-        class FOOTER: AN_ctrlStaticFooter {
+        class FOOTER: AH_ctrlStaticFooter {
             x 					= "0.396354 * safezoneW";
             y 					= "0.532407 * safezoneH";
             w 					= "0.20625 * safezoneW";
             h 					= "0.0259259 * safezoneH";
         };
-        class CONTENT_TEXT: AN_ctrlStatic {
+        class CONTENT_TEXT: AH_ctrlStatic {
             idc 				= 4;
             x 					= "0.398437 * safezoneW";
             y 					= "0.424852 * safezoneH";
@@ -2300,7 +2299,7 @@ class AN_ctrlPromptSmall: AN_ctrlControlsGroupNoScrollbars {
             h 					= "0.10363 * safezoneH";
             style			    = ST_LEFT + ST_MULTI + ST_NO_RECT;
         };
-        class BUTTON_CANCEL: AN_ctrlDefaultButton {
+        class BUTTON_CANCEL: AH_ctrlDefaultButton {
             idc					= 1;
             text				= "";
             x 					= "0.550521 * safezoneW";
@@ -2315,7 +2314,7 @@ class AN_ctrlPromptSmall: AN_ctrlControlsGroupNoScrollbars {
     };
 };
 
-class AN_ctrlSliderV: AN_ctrlDefault {
+class AH_ctrlSliderV: AH_ctrlDefault {
 	type = 3;
 	style = 0;
 	color[] = {0,0,0,1};
@@ -2353,11 +2352,11 @@ class AN_ctrlSliderV: AN_ctrlDefault {
 	onSliderPosChanged = "";
 };
 
-class AN_ctrlSliderH: AN_ctrlSliderV {
+class AH_ctrlSliderH: AH_ctrlSliderV {
 	style = 1024;
 };
 
-class AN_ctrlXSliderV: AN_ctrlDefault {
+class AH_ctrlXSliderV: AH_ctrlDefault {
 	type = 43;
 	style = 0;
 	color[] = {1,1,1,0.6};
@@ -2400,11 +2399,11 @@ class AN_ctrlXSliderV: AN_ctrlDefault {
 	onSliderPosChanged = "";
 };
 
-class AN_ctrlXSliderH: AN_ctrlXSliderV {
+class AH_ctrlXSliderH: AH_ctrlXSliderV {
 	style = 1024;
 };
 
-class AN_ctrlTree: AN_ctrlDefaultText {
+class AH_ctrlTree: AH_ctrlDefaultText {
 	type = 12;
 	colorBorder[] = {0,0,0,0};
 	colorLines[] = {0,0,0,0};
@@ -2457,7 +2456,7 @@ class AN_ctrlTree: AN_ctrlDefaultText {
 	onTreeMouseExit = "";
 };
 
-class AN_ctrlMap: AN_ctrlDefault {
+class AH_ctrlMap: AH_ctrlDefault {
 	type = 101;
 	style = 48;
 	x = "safezoneXAbs";
@@ -2751,7 +2750,7 @@ class AN_ctrlMap: AN_ctrlDefault {
 	onDraw = "";
 };
 
-class AN_ctrlMapEmpty: AN_ctrlMap {
+class AH_ctrlMapEmpty: AH_ctrlMap {
 	ptsPerSquareSea = 1000;
 	ptsPerSquareTxt = 1000;
 	ptsPerSquareCLn = 1000;
@@ -2977,9 +2976,9 @@ class AN_ctrlMapEmpty: AN_ctrlMap {
 	};
 };
 
-class AN_ctrlMapMain: AN_ctrlMap {};
+class AH_ctrlMapMain: AH_ctrlMap {};
 
-class AN_ctrlButtonMapSort: AN_ctrlButton {
+class AH_ctrlButtonMapSort: AH_ctrlButton {
     idc                = -1;
     text               = "PRESS TAB FOR SORT MENU";
     x                  = "0.870625 * safezoneW + safezoneX";
@@ -2988,28 +2987,28 @@ class AN_ctrlButtonMapSort: AN_ctrlButton {
     h                  = "0.0198 * safezoneH";
 };
 
-class AN_ctrlMapSort: AN_ctrlControlsGroupNoScrollbars {
+class AH_ctrlMapSort: AH_ctrlControlsGroupNoScrollbars {
     idc        = -1;
 	x          = "safezoneX";
 	y          = "safezoneY";
 	w          = "safezoneW";
 	h          = "safezoneH";
     class controls {
-        class BACKGROUND: AN_ctrlStaticBackground {
+        class BACKGROUND: AH_ctrlStaticBackground {
         	idc                = 1;
         	x                  = "0.870625 * safezoneW";
         	y                  = "0.586726 * safezoneH";
         	w                  = "0.127868 * safezoneW";
         	h                  = "0.390326 * safezoneH";
         };
-        class HEADER: AN_ctrlStaticTitle {
+        class HEADER: AH_ctrlStaticTitle {
             idc                = 2;
             text               = "Map Sort";
             x                  = "0.870625 * safezoneW";
             y                  = "0.5638 * safezoneH";
             w                  = "0.127868 * safezoneW";
         };
-        class SEARCHBUTTON_BACKGROUND: AN_ctrlStatic {
+        class SEARCHBUTTON_BACKGROUND: AH_ctrlStatic {
             idc                = 4;
         	x                  = "0.872282 * safezoneW";
         	y                  = "0.5902 * safezoneH";
@@ -3017,7 +3016,7 @@ class AN_ctrlMapSort: AN_ctrlControlsGroupNoScrollbars {
         	h                  = 0.022 * safezoneH;
         	colorBackground[]  = COLOUR_CONTENTBACKGROUND;
         };
-        class BUTTON_SEARCHREFRESH: AN_ctrlButtonPictureKeepAspect {
+        class BUTTON_SEARCHREFRESH: AH_ctrlButtonPictureKeepAspect {
             idc                = 5;
         	text               = "\a3\3DEN\Data\Displays\Display3DEN\search_start_ca.paa";
         	x                  = "0.873281 * safezoneW";
@@ -3026,7 +3025,7 @@ class AN_ctrlMapSort: AN_ctrlControlsGroupNoScrollbars {
         	h                  = "0.0188889 * safezoneH";
             colorBackground[]  = {0, 0, 0, 1};
         };
-        class INPUT_SEARCH: AN_ctrlEdit {
+        class INPUT_SEARCH: AH_ctrlEdit {
             idc                = 6;
         	x                  = "0.885625 * safezoneW";
         	y                  = "0.589852 * safezoneH";
@@ -3034,7 +3033,7 @@ class AN_ctrlMapSort: AN_ctrlControlsGroupNoScrollbars {
         	h                  = 0.022 * safezoneH;
         	colorBackground[]  = COLOUR_INPUT;
         };
-        class TREE: AN_ctrlTree {
+        class TREE: AH_ctrlTree {
             idc                = 7;
             idcSearch          = 6;
         	x                  = "0.872396 * safezoneW";
@@ -3043,7 +3042,7 @@ class AN_ctrlMapSort: AN_ctrlControlsGroupNoScrollbars {
         	h                  = "0.342852 * safezoneH";
         	colorBackground[]  = COLOUR_CONTENTBACKGROUND;
         };
-        class BUTTON_FOCUSLOCATION: AN_ctrlButton {
+        class BUTTON_FOCUSLOCATION: AH_ctrlButton {
             idc                = 8;
             text               = "FOCUS"; // ToDo: Localize;
             x                  = "0.872396 * safezoneW";
@@ -3051,7 +3050,7 @@ class AN_ctrlMapSort: AN_ctrlControlsGroupNoScrollbars {
             w                  = "0.0618749 * safezoneW";
             h                  = "0.0198 * safezoneH";
         };
-        class BUTTON_FOCUSONPLAYER: AN_ctrlButton {
+        class BUTTON_FOCUSONPLAYER: AH_ctrlButton {
             idc                = 9;
             text               = "PLAYER"; // ToDo: Localize;
             x                  = "0.934687 * safezoneW";
