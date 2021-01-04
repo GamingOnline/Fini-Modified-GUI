@@ -5,7 +5,7 @@
  - A copy of Fini's Anti-Hack & Admin Tools is required. (https://site.fini.dev/)
 
 ## **Installation**
-  1. Download the contents of the repo provided in the github releases section.
+  1. Download the contents of the repo provided in the releases section.
   2. Place the "AH" folder into the "dialog" folder within your mission file (The directory should be "AltisLife.Altis\dialog\AH\").
   3. Include the dialog in your description.ext.
       1. #include "dialog\AH\AH_Controls.hpp
