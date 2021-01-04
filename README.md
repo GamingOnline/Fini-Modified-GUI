@@ -6,11 +6,11 @@
 
 ## **Installation**
   1. Download the contents of the repo provided in the releases section.
-  2. Place the "AH" folder into the "dialog" folder within your mission file (The directory should be "AltisLife.Altis\dialog\AH\").
-  3. Include the dialog in your description.ext.
-      1. #include "dialog\AH\AH_Controls.hpp
-      2. #include "dialog\AH\AH_Dialog.hpp
-  4. Include the script in your initPlayerLocal.sqf (In the base of your mission).
+  2. Place the "AH" folder into a "dialog" folder if you have one, if you don't you can make one or you can change the directories within the script and dialog files to fit your needs. (The directory should be "AltisLife.Altis\dialog\AH\")
+  3. Include the dialog in your description.ext
+      1. #include "dialog\AH\AH_Controls.hpp"
+      2. #include "dialog\AH\AH_Dialog.hpp"
+  4. Include the script in your initPlayerLocal.sqf (In the base of your mission)
       1. [] execVM "dialog\AH\AH_Menu.sqf";
       
 ## **Support**
