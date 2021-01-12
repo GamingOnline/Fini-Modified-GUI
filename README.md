@@ -8,11 +8,13 @@
   1. Download the contents of the repo provided in the releases section.
   2. Place the "AH" folder into a "dialog" folder if you have one, if you don't you can make one or you can change the directories within the script and dialog files to fit your needs. (The directory should be "AltisLife.Altis\dialog\AH\")
   3. Include the dialog in your description.ext
+  
       ```
       #include "dialog\AH\AH_Controls.hpp"
       #include "dialog\AH\AH_Dialog.hpp"
       ```
   4. Place the CfgFunctions class into your own CfgFunctions file. (Example below of where it should be on Altis Life)
+  
       ```
       class CfgFunctions {
           class Life_Client_Core {
