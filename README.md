@@ -10,8 +10,19 @@
   3. Include the dialog in your description.ext
       1. #include "dialog\AH\AH_Controls.hpp"
       2. #include "dialog\AH\AH_Dialog.hpp"
-  4. Include the script in your initPlayerLocal.sqf (In the base of your mission)
-      1. [] execVM "dialog\AH\AH_Menu.sqf";
+  4. Place the CfgFunctions class into your own CfgFunctions file. (Example below of where it should be on Altis Life)
+      ```
+      class CfgFunctions {
+          class Life_Client_Core {
+              tag = "life";
+
+              class dialogAH {
+                  file = "dialog\AH";
+                  class AHMenu {postInit = 1;};
+              };
+          };
+      };
+      ```
  
 ## **Additional Information**
  - If for whatever reason you don't have a notification system or want to use the one bundled in the scripts file, you can change your notification method within the fini cloud config with the following.
