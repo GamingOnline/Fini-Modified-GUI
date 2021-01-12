@@ -1,2 +1,6 @@
 #include "dialog\AH\AH_Controls.hpp"
 #include "dialog\AH\AH_Dialog.hpp"
+
+class CfgFunctions {
+	#include "Functions.hpp"
+};
