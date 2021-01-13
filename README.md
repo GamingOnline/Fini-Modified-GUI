@@ -13,7 +13,7 @@
       #include "dialog\AH\AH_Controls.hpp"
       #include "dialog\AH\AH_Dialog.hpp"
       ```
-  4. Place the CfgFunctions class into your own CfgFunctions file. (Example below of where it should be on Altis Life)
+  4. Place the ```dialogAH``` class into your own CfgFunctions file. (Example below of where it should be on Altis Life)
   
       ```
       class CfgFunctions {
